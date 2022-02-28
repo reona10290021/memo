@@ -8,15 +8,15 @@ memo_type = gets.to_s.chomp
 if memo_type == "1"
   puts "拡張子を除いたファイルを入力してください"
   
-  file_name = gets.to_s.chomp
+  file_name = gets.to_s
   
   puts "メモしたい内容を入力してください"
   puts "完了したらCtrl + Dを押してください"
   
-  memo_content = readlines
+  memo_content = STDIN.read
   
   CSV.open(file_name+".csv", "w") do |csv|
-    csv << memo_content
+    csv << [memo_content]
   end
   
   puts "新規作成完了しました"
@@ -24,15 +24,15 @@ if memo_type == "1"
 else
   puts "拡張子を除いた既存のファイルを入力してください"
   
-  file_name = gets.to_s.chomp
+  file_name = gets.to_s
   
   puts "追加したい内容を入力してください"
   puts "完了したらCtrl + Dを押してください"
   
-  memo_content = readlines
+  memo_edit = STDIN.read
   
   CSV.open(file_name+".csv", "a") do |csv|
-    csv << memo_content
+    csv << [memo_edit]
   end
   
   puts "追加完了しました"
