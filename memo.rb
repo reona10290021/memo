@@ -8,7 +8,7 @@ memo_type = gets.to_s.chomp
 if memo_type == "1"
   puts "拡張子を除いたファイルを入力してください"
   
-  file_name = gets.to_s.champ
+  file_name = gets.to_s.chomp
   
   puts "メモしたい内容を入力してください"
   puts "完了したらCtrl + Dを押してください"
@@ -24,7 +24,7 @@ if memo_type == "1"
 else
   puts "拡張子を除いた既存のファイルを入力してください"
   
-  file_name = gets.to_s.champ
+  file_name = gets.to_s.chomp
   
   puts "追加したい内容を入力してください"
   puts "完了したらCtrl + Dを押してください"
